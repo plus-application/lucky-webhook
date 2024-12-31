@@ -1,0 +1,7 @@
+{
+  "auth": {
+    "token": "123456789abcdef",
+    "allowedIPs": ["*"]
+  },
+  "whiteList": ["/stun/redirect","/stun/all","/stun/rule"]
+}

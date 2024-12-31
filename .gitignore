@@ -1,0 +1,3 @@
+.settings/
+*.log
+node_modules/

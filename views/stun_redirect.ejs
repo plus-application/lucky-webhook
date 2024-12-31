@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUN中转页</title>
+  <style>
+    /* 表格基础样式 */
+    table {
+      width: 100%;
+      /* 占满父容器宽度 */
+      border-collapse: collapse;
+      /* 合并表格边框 */
+      margin: 20px 0;
+      /* 表格上下间距 */
+      font-size: 16px;
+      /* 字体大小 */
+      text-align: left;
+      /* 左对齐 */
+      background-color: #f9f9f9;
+      /* 表格背景颜色 */
+    }
+
+    /* 表格边框样式 */
+    table th,
+    table td {
+      border: 1px solid #ddd;
+      /* 单元格边框 */
+      padding: 12px 15px;
+      /* 单元格内边距 */
+    }
+
+    /* 表头样式 */
+    table th {
+
+      background-color: #056a64;
+      ;
+      /* 表头背景颜色 */
+      color: white;
+      /* 表头文字颜色 */
+      font-weight: bold;
+      /* 表头文字加粗 */
+    }
+
+    /* 鼠标悬停行高亮 */
+    table tr:hover {
+      /* background-color: #eee; */
+      /* 悬停显示指针 */
+    }
+
+    /* 表格容器，让表格内容滚动 */
+    .table-container {
+      overflow-x: auto;
+      /* 水平滚动 */
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      /* 容器边框 */
+      border-radius: 8px;
+      /* 圆角 */
+    }
+    #main {
+      max-width: 600px;
+      margin:0 auto;
+    }
+  </style>
+  <script type="text/javascript">
+    // 3秒后重定向到指定地址
+    setTimeout(function() {
+      window.location.href = "http://<%= redirect %>";
+    }, 3000);
+  </script>
+</head>
+
+<body>
+
+  <div id="main">
+    <h1>
+      <%= ruleName %>
+    </h1>
+    <table>
+      <tr>
+        <th>IP</th>
+        <td>
+          <%= ip %>
+        </td>
+      </tr>
+      <tr>
+        <th>端口</th>
+        <td>
+          <%= port %>
+        </td>
+      </tr>
+      <tr>
+        <th>DDNS</th>
+        <td>
+          <%= ddns %>
+        </td>
+      </tr>
+    </table>
+    3秒后自动跳转 <a href="http://<%= redirect %>"><%= redirect %></a>
+  </div>
+</body>
+
+</html>
