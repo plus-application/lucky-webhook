@@ -67,7 +67,7 @@ curl --location --request GET 'http://127.0.0.1:6000/stun/all' \
 ### 按RuleName查询STUN
 - 请求
 ```
-curl --location --request GET 'http://127.0.0.1:6000/stun/all' \
+curl --location --request GET 'http://127.0.0.1:6000/stun/rule?ruleName=1111' \
 --header 'User-Agent: Apifox/1.0.0 (https://apifox.com)' \
 --header 'Accept: */*' \
 --header 'Host: 127.0.0.1:3000' \

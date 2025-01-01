@@ -1,11 +1,14 @@
-const config = require('../config.json');
+const Tools = require('../utils/Tools')
+
+const fileConfig = require('../config.json');
+let config = Tools.resolveConfig(fileConfig)
 
 const whitelist = config.whiteList||[]
 module.exports = (req, res, next) => {
     const clientIP = req.ip; // 获取客户端 IP
     console.log('request from:', clientIP);
     // 验证 IP 地址
-    const allowedIPs = config.auth.allowedIPs;
+    const allowedIPs = config.allowedIPs;
     const isIPAllowed = allowedIPs.some(ipPattern => {
       const regexPattern = new RegExp(`^${ipPattern.replace(/\*/g, '.*')}$`);
       return regexPattern.test(clientIP);
@@ -22,7 +25,7 @@ module.exports = (req, res, next) => {
     }
     // 验证 API 密钥
     const token = req.headers['x-token']; // 从请求头中获取 Token
-    if (token !== config.auth.token) {
+    if (token !== config.token) {
         return res.status(401).json({ code:401,message: 'Unauthorized: Invalid Token' });
     }
 

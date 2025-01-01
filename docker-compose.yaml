@@ -6,6 +6,6 @@ services:
     ports:
       - "6000:6000"
     volumes:
-      - .:/app
+      - ./data:/app/data
     environment:
       NODE_ENV: production
