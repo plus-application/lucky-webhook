@@ -25,8 +25,11 @@ module.exports = (req, res, next) => {
     }
     // 验证 API 密钥
     const token = req.headers['x-token']; // 从请求头中获取 Token
+    if(!token){
+      token = req.query.token
+    }
     if (token !== config.token) {
-        return res.status(401).json({ code:401,message: 'Unauthorized: Invalid Token' });
+        return res.status(401).json({ code:401,message: 'Unauthorized: Invalid Token['+token +']'});
     }
 
 

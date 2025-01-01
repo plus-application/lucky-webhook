@@ -39,6 +39,8 @@ curl --location --request POST 'http://127.0.0.1:6000/stun' \
     "message": "OK"
 }
 ```
+![图片](https://public-picgo.oss-cn-guangzhou.aliyuncs.com/stun_post.png)
+
 
 ### 查询全部STUN列表
 - 请求
@@ -91,3 +93,5 @@ curl --location --request GET 'http://127.0.0.1:6000/stun/rule?ruleName=1111' \
 > stun_redirect.ejs
 
 地址 : /stun/redirect?ruleName=xxx
+
+![图片](https://public-picgo.oss-cn-guangzhou.aliyuncs.com/stun_redirect.png)
